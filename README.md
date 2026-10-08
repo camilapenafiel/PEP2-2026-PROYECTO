@@ -1,38 +1,53 @@
 # UNICLIMA METRICS
 
-## Descripción
+## Nombre del proyecto
+**UNICLIMA METRICS**
 
-UNICLIMA METRICS es un proyecto IoT orientado a medir y visualizar condiciones climáticas locales en el campus de UNIFRANZ.
+Sistema IoT de monitoreo climático local para el campus de la Universidad Privada Franz Tamayo (UNIFRANZ).
 
-El sistema contempla una estación meteorológica de bajo costo basada en ESP32 y sensores para obtener temperatura, humedad relativa, presión barométrica, precipitación y radiación UV. Los datos serán comunicados mediante HTTP, almacenados en SQL Server y utilizados para visualización, análisis, alertas y reportes históricos.
+## Problema
+Las aplicaciones meteorológicas convencionales pueden presentar datos poco precisos para una ubicación específica cuando utilizan información proveniente de estaciones o satélites alejados.
+
+En el campus de UNIFRANZ existe la necesidad de contar con mediciones climáticas locales de temperatura, humedad, presión barométrica, precipitación y radiación UV, además de información histórica y alertas.
+
+## Propósito
+Desarrollar una estación meteorológica IoT de bajo costo que permita obtener información climática directamente del entorno del campus de UNIFRANZ, almacenar los datos y presentarlos de forma clara para facilitar su consulta, análisis y uso didáctico.
+
+## Usuarios
+- **Administrador:** administración de estaciones y funciones administrativas.
+- **Investigador / Usuario de Consulta:** consulta de información climática e histórica.
+- **Personal y estudiantes del campus:** visualización de las condiciones climáticas locales.
 
 ## Objetivo
+Implementar una estación meteorológica IoT automatizada basada en hardware y un ESP32 para recopilar datos climáticos locales, almacenarlos en SQL Server, generar análisis y alertas mediante reglas definidas en el proyecto y presentar los resultados mediante una interfaz amigable.
 
-Implementar una estación meteorológica IoT automatizada que permita recopilar datos climáticos locales, almacenarlos en una base de datos SQL Server, analizarlos mediante reglas definidas en el proyecto y presentarlos mediante una interfaz amigable.
+## Descripción general
+UNICLIMA METRICS contempla una estación meteorológica de bajo costo construida alrededor de un ESP32.
 
-## Tecnologías y componentes previstos
+- **BMP280:** temperatura y presión barométrica.
+- **DHT11:** humedad relativa.
+- **FC-37:** detección de precipitación.
+- **Sensor UV:** medición de radiación ultravioleta.
+- Comunicación mediante **Wi-Fi y HTTP** dentro de la red de la universidad.
+- Persistencia de datos en **SQL Server**.
 
-- ESP32
-- BMP280
-- DHT11
-- FC-37
-- Sensor de radiación UV
-- Comunicación Wi-Fi mediante HTTP
-- SQL Server
-- C++
-- C#
-- Interfaz gráfica / aplicación
-- Reportes en PDF y Excel
+El sistema contempla visualización dinámica mediante indicadores tipo semáforo, alertas de UV, cálculo aproximado del tiempo seguro de exposición solar, detección de posibles condiciones de tormenta o frente frío mediante variaciones de presión, cálculo de un índice acumulativo de sequía, administración de estaciones, consulta histórica y reportes en PDF y Excel.
 
-## Funcionalidades principales
+## Integrantes
+- **Camila Raquel Choque Peñafiel** — Grupo: UNNICLIMA METRICS — Rol: pendiente de definir.
+- **José Carlos Trujillo Soliz** — Grupo: Paralelo 3 — Rol: pendiente de definir.
 
-- Monitoreo de temperatura, humedad, presión, precipitación y UV.
-- Visualización dinámica del estado climático.
-- Alertas relacionadas con índice UV y variaciones de presión.
-- Cálculo de un índice acumulativo de sequía.
-- Administración de estaciones y acceso por roles.
-- Consulta histórica por rango de fechas.
-- Exportación de reportes a PDF y Excel.
+> Los roles se mantienen como pendientes porque el informe proporcionado no especifica las responsabilidades individuales.
+
+## Estado actual
+**Hito 2 — Definición y alcance.**
+
+Actualmente se han establecido la problemática, objetivos, requisitos funcionales y no funcionales, alcance, limitaciones, historias de usuario, metodología Scrum, selección inicial de sensores y hardware, arquitectura general de comunicación, uso de SQL Server y los hitos de desarrollo.
+
+### Próximos hitos
+- **Hito 3:** primer prototipo funcional, base de datos física, conexión del ESP32 con sensores y primera visualización.
+- **Hito 4:** sistema al 90%, algoritmos de sequía y detección barométrica, panel administrativo y UML consolidado.
+- **Hito 5:** sistema final al 100%, pruebas de integración, correcciones, documentación final y defensa.
 
 ## Organización del repositorio
 
@@ -40,51 +55,24 @@ Implementar una estación meteorológica IoT automatizada que permita recopilar 
 PEP2-2026-PROYECTO/
 ├── README.md
 ├── docs/
-│   ├── proyecto/
-│   ├── presentacion/
-│   ├── planificacion/
-│   ├── requisitos/
-│   ├── analisis/
-│   └── tecnica/
-│       ├── arquitectura/
-│       ├── base-datos/
-│       ├── hardware/
-│       ├── uml/
-│       └── interfaz/
 ├── src/
-│   ├── esp32/
-│   └── aplicacion/
-│       ├── presentacion/
-│       ├── negocio/
-│       └── datos/
 ├── database/
-│   ├── scripts/
-│   └── consultas/
 ├── tests/
-│   ├── hardware/
-│   ├── software/
-│   └── integracion/
 ├── resources/
-│   ├── images/
-│   └── diagrams/
 ├── EQUIPO/
 └── .github/
-    └── ISSUE_TEMPLATE/
 ```
 
 ## Metodología
+El proyecto utiliza **Scrum**, contemplando refinamiento, planificación de Sprint, construcción, revisión y retrospectiva.
 
-El proyecto seguirá Scrum, con actividades de refinamiento, planificación de Sprint, construcción, revisión y retrospectiva.
+## Alcance
+El proyecto está orientado al monitoreo climático dentro de las áreas del campus de UNIFRANZ y contempla un prototipo universitario de bajo costo.
 
-## Hitos
+No se contempla en la fase actual:
+- Modelos de predicción mediante redes neuronales o aprendizaje automático complejo.
+- Una carcasa meteorológica industrial.
+- Aplicaciones nativas para Android o iOS.
+- Pronósticos fuera de las áreas del campus de UNIFRANZ.
 
-- **Hito 2:** definición y alcance.
-- **Hito 3:** primer prototipo funcional.
-- **Hito 4:** sistema al 90%.
-- **Hito 5:** sistema final al 100%.
-
-## Alcance actual
-
-El repositorio servirá como centro de control del proyecto durante el semestre. En él se organizarán la documentación, planificación, requisitos, diagramas, código, scripts de base de datos, pruebas, recursos y evidencias del desarrollo.
-
-> Nota: la documentación del proyecto debe mantenerse alineada con el informe académico vigente. La definición final de la tecnología de la aplicación deberá aclararse posteriormente, ya que el informe menciona tanto una aplicación web como Windows Forms/C#.
+> **Nota:** el informe menciona tanto una aplicación web como Windows Forms/C#. Esta definición tecnológica deberá aclararse antes de implementar la estructura definitiva de la aplicación.

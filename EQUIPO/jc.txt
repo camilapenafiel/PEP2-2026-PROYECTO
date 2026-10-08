@@ -1,4 +1,5 @@
 Nombre: José Carlos
 Apellido: Trujillo
 Grupo: Paralelo 3
-Rol o responsabilidad principal:
+Rol o responsabilidad principal: Diseño y desarrollo de la interfaz de usuario (Frontend / Windows Forms con C#).
+Responsabilidades complementarias: Apoyo en la integración de los sensores IoT con el sistema, pruebas funcionales y documentación, en coordinación con Camila.

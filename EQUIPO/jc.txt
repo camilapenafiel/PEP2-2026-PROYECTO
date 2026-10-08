@@ -1,0 +1,4 @@
+Nombre: José Carlos
+Apellido: Trujillo
+Grupo: Paralelo 3
+Rol o responsabilidad principal:
